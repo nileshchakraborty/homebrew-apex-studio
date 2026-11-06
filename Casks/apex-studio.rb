@@ -12,16 +12,12 @@ cask "apex-studio" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Apex Studio.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/Apex Studio.app"],
-                   sudo: false
-  rescue StandardError
-    nil
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Apex Studio.app"], must_succeed: false
   end
 
   zap trash: [
