@@ -6,27 +6,31 @@ Official Homebrew tap for [Apex Studio](https://github.com/nileshchakraborty/ape
 
 ## 🚀 Installation
 
-### 1. Add Tap and Install
-To install Apex Studio using Homebrew, simply run:
+### Option 1: Standalone Desktop App (Recommended)
+To install the standalone native macOS desktop application (`Apex Studio.app`):
 
 ```bash
+brew install --cask nileshchakraborty/apex-studio/apex-studio
+```
+Or tap first:
+```bash
 brew tap nileshchakraborty/apex-studio
-# On Homebrew 7.0+, trust the personal tap if prompted:
-brew trust nileshchakraborty/apex-studio
-brew install apex-studio
+brew trust nileshchakraborty/apex-studio  # Homebrew 7.0+
+brew install --cask apex-studio
 ```
 
-Or install directly in one step:
+### Option 2: CLI & Backend Engine Daemon
+To install the command-line interface and background service:
+
 ```bash
 brew install nileshchakraborty/apex-studio/apex-studio
 ```
 
-### 2. In a Brewfile
-If you manage your development environment with [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle), add the following to your `Brewfile`:
-
+### In a Brewfile
 ```ruby
 tap "nileshchakraborty/apex-studio"
-brew "apex-studio"
+cask "apex-studio" # For standalone Desktop App
+brew "apex-studio" # For CLI & Engine Daemon
 ```
 
 ---
