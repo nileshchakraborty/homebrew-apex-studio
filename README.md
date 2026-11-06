@@ -11,6 +11,8 @@ To install Apex Studio using Homebrew, simply run:
 
 ```bash
 brew tap nileshchakraborty/apex-studio
+# On Homebrew 7.0+, trust the personal tap if prompted:
+brew trust nileshchakraborty/apex-studio
 brew install apex-studio
 ```
 
